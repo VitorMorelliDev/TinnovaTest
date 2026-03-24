@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: vehicleapi
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vehicles_db
+    username: root
+    password: rootpassword
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      repositories:
+        enabled: false
+      host: localhost
+      port: 6379
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000
+            readTimeout: 5000
+
+api:
+  security:
+    token:
+      secret: MDI2MWNhZDktYWVhOS00MWE4LWE3MmYtN2ZkYjVkMWYzYzI5
+      expiration: 86400000
+
+  exchange:
+    primary-url: https://economia.awesomeapi.com.br/json/last/USD-BRL
+    fallback-url: https://api.frankfurter.app/latest?from=USD&to=BRL
