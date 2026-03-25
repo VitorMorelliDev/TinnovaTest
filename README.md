@@ -48,7 +48,7 @@ Siga os passos abaixo para subir a infraestrutura e rodar a API localmente.
 Na raiz do projeto (onde o arquivo docker-compose.yml está localizado), execute o comando abaixo no terminal para iniciar os containers em segundo plano:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ````
 
 Isso iniciará o PostgreSQL na porta **5432** e o Redis na porta **6379**.
