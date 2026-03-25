@@ -4,6 +4,17 @@ Esta é uma API RESTful desenvolvida para o desafio técnico da Tinnova. O objet
 
 ---
 
+## 📺 Demonstração e Explicação
+
+Assista aos vídeos abaixo para uma explicação detalhada da arquitetura, funcionalidades e execução do projeto:
+
+| Vídeo 1 | Vídeo 2 | Vídeo 3 |
+| :---: | :---: | :---: |
+| [![Explicação 1](https://img.youtube.com/vi/HWCAXpDU3EE/0.jpg)](https://youtu.be/HWCAXpDU3EE) | [![Explicação 2](https://img.youtube.com/vi/Lzuob_fKSxk/0.jpg)](https://youtu.be/Lzuob_fKSxk) | [![Explicação 3](https://img.youtube.com/vi/DHKVqqbvHSQ/0.jpg)](https://youtu.be/DHKVqqbvHSQ) |
+| [Assistir Parte 1](https://youtu.be/HWCAXpDU3EE) | [Assistir Parte 2](https://youtu.be/Lzuob_fKSxk) | [Assistir Parte 3](https://youtu.be/DHKVqqbvHSQ) |
+
+---
+
 ## 🚀 Tecnologias Utilizadas
 
 - **Linguagem:** Java 21  
