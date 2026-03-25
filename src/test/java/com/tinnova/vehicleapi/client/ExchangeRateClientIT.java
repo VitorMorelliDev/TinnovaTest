@@ -12,10 +12,10 @@ import org.springframework.test.context.TestPropertySource;
 import java.math.BigDecimal;
 import java.util.Objects;
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
-import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
-import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.reset;
+import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestPropertySource(properties = {
@@ -32,9 +32,9 @@ class ExchangeRateClientIT extends BaseIntegrationTest {
     private CacheManager cacheManager;
 
     @BeforeEach
-    void cleanCache() {
-        Objects.requireNonNull(cacheManager.getCache("dollar_rate")).clear();
+    void setUp() {
         reset();
+        Objects.requireNonNull(cacheManager.getCache("dollar_rate")).clear();
     }
 
     @Test
@@ -46,7 +46,6 @@ class ExchangeRateClientIT extends BaseIntegrationTest {
                         .withBody("{\"USDBRL\": {\"bid\": \"5.25\"}}")));
 
         BigDecimal rate = exchangeRateService.getUsdToBrlRate();
-
         assertEquals(0, rate.compareTo(new BigDecimal("5.25")));
     }
 
@@ -67,7 +66,6 @@ class ExchangeRateClientIT extends BaseIntegrationTest {
                         .withBody("{\"rates\": {\"BRL\": 5.30}}")));
 
         BigDecimal rate = exchangeRateService.getUsdToBrlRate();
-
         assertEquals(0, rate.compareTo(new BigDecimal("5.30")));
     }
 }

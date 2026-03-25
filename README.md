@@ -108,6 +108,30 @@ Agora você pode testar todos os endpoints de **/veiculos** com as devidas permi
 
 ---
 
+## ⚙️ Testes Automatizados (Unitários e de Integração)
+
+O projeto possui uma suíte robusta de testes automatizados para garantir a qualidade, segurança e a resiliência da aplicação, cobrindo 100% das regras de negócio mapeadas:
+
+- **Testes Unitários**: Focados nas regras de negócio (camada de Service), utilizando JUnit 5 e Mockito para conversões de moeda e validações de placa.
+- **Testes de Integração (Banco de Dados e E2E):** Utiliza Testcontainers para subir um container efêmero do PostgreSQL real, homologando as Specifications, contagens customizadas e contratos da Controller via MockMvc sem sujar o banco de dados local.
+- **Testes de Resiliência Externa:** Utiliza WireMock para simular as respostas da API externa de cotação de moedas, testando tanto o "Caminho Feliz" (Status 200) quanto o mecanismo de Fallback em caso de falha (Status 500).
+
+**Como executar a suíte de testes**
+
+**No Linux/macOS:**
+
+```bash
+./mvnw verify
+```
+
+**No Windows:**
+
+```bash
+mvnw.cmd verify
+```
+O comando verify garante a execução tanto da fase test para unitários quanto da fase integration-test do Failsafe Plugin.
+
+---
 ## ✅ Requisitos Implementados
 
 * [x] CRUD Completo: Cadastro, atualização (PUT/PATCH), deleção lógica (Soft Delete) e consulta de veículos

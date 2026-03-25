@@ -70,7 +70,7 @@ public class VehicleService {
     @Transactional
     public void delete(Long id) {
         Vehicle vehicle = findById(id);
-        vehicle.setActive(false); // Soft delete
+        vehicle.setActive(false);
         vehicleRepository.save(vehicle);
     }
 
